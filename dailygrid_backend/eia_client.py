@@ -6,6 +6,8 @@ from dailygrid_backend.config import EIA_API_KEY, EIA_BASE_URL
 
 
 class EIAClient:
+    """Client to interact with the EIA API."""
+
     def __init__(self, api_key: str = EIA_API_KEY):
         self.api_key = api_key
         self.base_url = EIA_BASE_URL

@@ -7,6 +7,7 @@ import os
 from dailygrid_backend.data_fetcher import get_latest_seven_day_energy_mix
 from dailygrid_backend.data_writer import write_json
 from dailygrid_backend.utils import get_now_central_string
+from dailygrid_backend.config import PROCESSED_OUTPUT_FILE, RAW_OUTPUT_FILE
 
 from dailygrid_backend.types import (
     DISPLAY_TYPE_GROUPS,
@@ -156,13 +157,16 @@ def main():
     processed_data = processed_data_df.to_dict(orient="records")
     raw_response["data"] = processed_data
 
-    # add latest period and values for main visuals
-    raw_response["latest"] = {}
-    raw_response["latest"]["date"] = get_latest_period(processed_data_df)
-    raw_response["latest"]["updated"] = get_now_central_string()
+    # add latest period and values for main visuals in frontend
+
+    frontend_data = {}
+    frontend_data["US48"] = {}
+    frontend_data["US48"]["latest"] = {}
+    frontend_data["US48"]["latest"]["date"] = get_latest_period(processed_data_df)
+    frontend_data["US48"]["latest"]["updated"] = get_now_central_string()
     for type_name in DISPLAY_TYPE_GROUPS:
         value, percent = get_latest_type_values(processed_data_df, type_name)
-        raw_response["latest"][type_to_col_name(type_name)] = {
+        frontend_data["US48"]["latest"][type_to_col_name(type_name)] = {
             "megawatthours": value,
             "gigawatthours": int(round(value / 1000, 0)),
             "percent": percent,
@@ -185,13 +189,14 @@ def main():
                 "gigawatthours": int(round(total / 1000, 0)),
             }
         )
-    raw_response["history"] = {}
-    raw_response["history"]["total"] = total_history
+    frontend_data["US48"]["history"] = {}
+    frontend_data["US48"]["history"]["total"] = total_history
 
     # pprint(raw_response["latest"])
     # print(add_total(raw_records_df))
 
-    write_json(raw_response)
+    write_json(raw_response, RAW_OUTPUT_FILE)
+    write_json(frontend_data, PROCESSED_OUTPUT_FILE)
 
 
 def _main_dev():
