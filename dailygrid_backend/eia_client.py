@@ -2,7 +2,7 @@ import requests
 import logging
 from typing import Optional
 
-from dailygrid_backend.config import EIA_API_KEY, EIA_BASE_URL
+from dailygrid_backend.config import EIA_API_KEY, EIA_BASE_URL, SUPPORTED_REGIONS
 
 
 class EIAClient:
@@ -23,7 +23,7 @@ class EIAClient:
                     "api_key": self.api_key,
                     "frequency": "daily",
                     "data[0]": "value",
-                    "facets[respondent][]": ["US48"],
+                    "facets[respondent][]": SUPPORTED_REGIONS,
                     "start": start_date,
                     # "end": "2025-05-25T12",
                     "end": end_date,

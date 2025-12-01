@@ -7,7 +7,12 @@ import os
 from dailygrid_backend.data_fetcher import get_latest_seven_day_energy_mix
 from dailygrid_backend.data_writer import write_json
 from dailygrid_backend.utils import get_now_central_string
-from dailygrid_backend.config import PROCESSED_OUTPUT_FILE, RAW_OUTPUT_FILE
+from dailygrid_backend.config import (
+    PROCESSED_OUTPUT_FILE,
+    RAW_OUTPUT_FILE,
+    SUPPORTED_REGIONS,
+    DEFAULT_TIMEZONE,
+)
 
 from dailygrid_backend.types import (
     DISPLAY_TYPE_GROUPS,
@@ -97,20 +102,22 @@ def get_latest_period(df: pd.DataFrame) -> str:
 
 
 def get_latest_type_values(
-    df: pd.DataFrame, type_name: str, timezone: str = "Central"
+    df: pd.DataFrame, type_name: str, timezone: str = DEFAULT_TIMEZONE
 ) -> Tuple[int, float]:
 
     latest_period_df = df[
         (df["period"] == get_latest_period(df)) & (df["timezone"] == timezone)
     ]
 
+    # print(latest_period_df["type_name"].unique())
+
     # get totals taking into account grouped types
     type_value = 0
     for subtype in VALID_TYPE_GROUPS[type_name]:
-        subtype_value = latest_period_df[latest_period_df["type_name"] == subtype][
-            "value"
-        ].values[0]
-        type_value += subtype_value
+        subtype_df = latest_period_df[latest_period_df["type_name"] == subtype]
+        if not subtype_df.empty:
+            subtype_value = subtype_df["value"].values[0]
+            type_value += subtype_value
     total_value = latest_period_df[latest_period_df["type_name"] == "Total"][
         "value"
     ].values[0]
@@ -130,10 +137,10 @@ def main():
     """
     logger.info("Running main()")
 
-    # print(now_utc_iso())
-
     raw_response = get_latest_seven_day_energy_mix()
-    # pprint(data)
+
+    # dict_keys(['total', 'dateFormat', 'frequency', 'data', 'description'])
+    logger.info(f"Records returned: {raw_response["total"]}")
 
     # prep
     raw_data = raw_response["data"]
@@ -141,61 +148,67 @@ def main():
     raw_data_df.columns = raw_data_df.columns.str.replace("-", "_", regex=False)
     raw_data_df["value"] = raw_data_df["value"].astype(int)
 
-    # get records and conacetanate
-    renewables_df = add_renewables(raw_data_df)
-    fossil_fuels_df = add_fossil_fuels(raw_data_df)
-    total_df = add_total(raw_data_df)
-    processed_data_df = pd.concat(
-        [raw_data_df, renewables_df, fossil_fuels_df, total_df]
-    )
-    processed_data_df = processed_data_df.sort_values(
-        by=["period", "fueltype", "type_name"]
-    )
-    processed_data_df = processed_data_df.reset_index(drop=True)
-
-    # mimic structure of the original data
-    processed_data = processed_data_df.to_dict(orient="records")
-    raw_response["data"] = processed_data
-
-    # add latest period and values for main visuals in frontend
-
+    # process by region
+    region_df_list = []
     frontend_data = {}
-    frontend_data["US48"] = {}
-    frontend_data["US48"]["latest"] = {}
-    frontend_data["US48"]["latest"]["date"] = get_latest_period(processed_data_df)
-    frontend_data["US48"]["latest"]["updated"] = get_now_central_string()
-    for type_name in DISPLAY_TYPE_GROUPS:
-        value, percent = get_latest_type_values(processed_data_df, type_name)
-        frontend_data["US48"]["latest"][type_to_col_name(type_name)] = {
-            "megawatthours": value,
-            "gigawatthours": int(round(value / 1000, 0)),
-            "percent": percent,
-            "source": type_name,
-        }
+    for region in SUPPORTED_REGIONS:
+        # validate that region is found in response
+        if region not in raw_data_df["respondent"].unique():
+            raise ValueError(f"Region {region} not found in data, check the API call")
 
-    # calculate total for all dates
-    all_dates = processed_data_df["period"].unique()
-    total_history = []
-    for date in all_dates:
-        date_total_df = processed_data_df[
-            (processed_data_df["period"] == date)
-            & (processed_data_df["type_name"] == "Total")
-        ]
-        total = date_total_df["value"].values[0]
-        total_history.append(
-            {
-                "date": date,
-                "megawatthours": int(total),
-                "gigawatthours": int(round(total / 1000, 0)),
-            }
+        region_df = raw_data_df[raw_data_df["respondent"] == region]
+
+        # get records and conacetanate
+        renewables_df = add_renewables(region_df)
+        fossil_fuels_df = add_fossil_fuels(region_df)
+        total_df = add_total(region_df)
+        processed_data_df = pd.concat(
+            [region_df, renewables_df, fossil_fuels_df, total_df]
         )
-    frontend_data["US48"]["history"] = {}
-    frontend_data["US48"]["history"]["total"] = total_history
+        processed_data_df = processed_data_df.sort_values(
+            by=["period", "fueltype", "type_name"]
+        )
+        processed_data_df = processed_data_df.reset_index(drop=True)
+        region_df_list.append(processed_data_df)
 
-    # pprint(raw_response["latest"])
-    # print(add_total(raw_records_df))
+        # add latest period and values for main visuals in frontend
+        frontend_data[region] = {}
+        frontend_data[region]["latest"] = {}
+        frontend_data[region]["latest"]["date"] = get_latest_period(processed_data_df)
+        frontend_data[region]["latest"]["updated"] = get_now_central_string()
+        for type_name in DISPLAY_TYPE_GROUPS:
+            value, percent = get_latest_type_values(processed_data_df, type_name)
+            frontend_data[region]["latest"][type_to_col_name(type_name)] = {
+                "megawatthours": value,
+                "gigawatthours": int(round(value / 1000, 0)),
+                "percent": percent,
+                "source": type_name,
+            }
 
-    write_json(raw_response, RAW_OUTPUT_FILE)
+        # calculate total for all dates
+        all_dates = processed_data_df["period"].unique()
+        total_history = []
+        for date in all_dates:
+            date_total_df = processed_data_df[
+                (processed_data_df["period"] == date)
+                & (processed_data_df["type_name"] == "Total")
+            ]
+            total = date_total_df["value"].values[0]
+            total_history.append(
+                {
+                    "date": date,
+                    "megawatthours": int(total),
+                    "gigawatthours": int(round(total / 1000, 0)),
+                }
+            )
+        frontend_data[region]["history"] = {}
+        frontend_data[region]["history"]["total"] = total_history
+
+    # write unaggregated data
+    raw_records = pd.concat(region_df_list).to_dict(orient="records")
+    write_json(raw_records, RAW_OUTPUT_FILE)
+
+    # write processed data for frontend
     write_json(frontend_data, PROCESSED_OUTPUT_FILE)
 
 
