@@ -6,6 +6,10 @@ install:
 update:
 	poetry run update_data
 
+.PHONY: update-dev
+update-dev:
+	DEV_RUN="true" poetry run python ./scripts/update_data.py
+
 .PHONY: clean
 clean:
 	rm -f data/daily_energy_mix_latest.json

@@ -1,6 +1,8 @@
 # from pprint import pprint
 import pandas as pd
 from typing import Tuple
+import logging
+import os
 
 from dailygrid_backend.data_fetcher import get_latest_seven_day_energy_mix
 from dailygrid_backend.data_writer import write_json
@@ -14,6 +16,12 @@ from dailygrid_backend.types import (
     VALID_TYPE_GROUPS,
     type_to_col_name,
 )
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="| %(asctime)s | %(name)s | %(levelname)s | %(message)s",
+)
+logger = logging.getLogger(__name__)
 
 
 def add_renewables(df: pd.DataFrame) -> pd.DataFrame:
@@ -114,6 +122,13 @@ def get_latest_type_values(
 
 
 def main():
+    """
+    Main function to update the data and write to JSON.
+    Should be agnostic to local vs deployed environment.
+    Used as poetry command in pyproject.toml - make changes with caution (see Makefile).
+    """
+    logger.info("Running main()")
+
     # print(now_utc_iso())
 
     raw_response = get_latest_seven_day_energy_mix()
@@ -179,5 +194,17 @@ def main():
     write_json(raw_response)
 
 
+def _main_dev():
+    """
+    Main function to run locally for testing.
+    """
+    pass
+
+
 if __name__ == "__main__":
-    main()
+    # check if this is a local testing run
+    if os.getenv("DEV_RUN") == "true":
+        logger.info("This is a dev run")
+        _main_dev()
+    else:
+        main()
