@@ -16,6 +16,10 @@ SUPPORTED_REGIONS = [
     "CISO",  # CAISO
     "MISO",  # MISO
     "ERCO",  # ERCOT
+    "PJM",  # PJM
+    "NYIS",  # NYISO
+    "ISNE",  # ISO-NE
+    "SWPP",  # SPP
 ]
 
 # DEFAULT_TIMEZONE = "Central"

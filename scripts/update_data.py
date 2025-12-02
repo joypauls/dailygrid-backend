@@ -120,8 +120,9 @@ def get_latest_type_values(
             subtype_value = subtype_df["value"].values[0]
             # for now, don't consider negative values
             if subtype_value < 0:
+                region = latest_period_df["respondent"].values[0]
                 logger.warning(
-                    f"Negative value {subtype_value} for subtype {subtype}, type {type_name} on latest date"
+                    f"Negative value {subtype_value} - subtype {subtype} - type {type_name} - {region}"
                 )
             type_value += max(subtype_value, 0)
     total_value = latest_period_df[latest_period_df["type_name"] == "Total"][
