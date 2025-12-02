@@ -109,7 +109,7 @@ def get_latest_type_values(
         (df["period"] == get_latest_period(df)) & (df["timezone"] == timezone)
     ]
 
-    print(latest_period_df.shape)
+    # print(latest_period_df.shape)
     # print(latest_period_df["type_name"].unique())
 
     # get totals taking into account grouped types

@@ -15,7 +15,8 @@ SUPPORTED_REGIONS = [
     "US48",  # all lower 48 states
     "CISO",  # CAISO
     "MISO",  # MISO
-    # "ERCO",  # ERCOT
+    "ERCO",  # ERCOT
 ]
 
-DEFAULT_TIMEZONE = "Central"
+# DEFAULT_TIMEZONE = "Central"
+DEFAULT_TIMEZONE = "Eastern"
