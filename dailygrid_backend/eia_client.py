@@ -30,7 +30,7 @@ class EIAClient:
                     "sort[0][column]": "period",
                     "sort[0][direction]": "desc",
                     "offset": 0,
-                    "length": 5000,
+                    "length": 5000,  # this is max I think?
                 },
             )
             response.raise_for_status()

@@ -109,6 +109,7 @@ def get_latest_type_values(
         (df["period"] == get_latest_period(df)) & (df["timezone"] == timezone)
     ]
 
+    print(latest_period_df.shape)
     # print(latest_period_df["type_name"].unique())
 
     # get totals taking into account grouped types
@@ -117,7 +118,12 @@ def get_latest_type_values(
         subtype_df = latest_period_df[latest_period_df["type_name"] == subtype]
         if not subtype_df.empty:
             subtype_value = subtype_df["value"].values[0]
-            type_value += subtype_value
+            # for now, don't consider negative values
+            if subtype_value < 0:
+                logger.warning(
+                    f"Negative value {subtype_value} for subtype {subtype}, type {type_name} on latest date"
+                )
+            type_value += max(subtype_value, 0)
     total_value = latest_period_df[latest_period_df["type_name"] == "Total"][
         "value"
     ].values[0]

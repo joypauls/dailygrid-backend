@@ -14,6 +14,7 @@ RAW_OUTPUT_FILE = "public/data/raw.json"
 SUPPORTED_REGIONS = [
     "US48",  # all lower 48 states
     "CISO",  # CAISO
+    "MISO",  # MISO
     # "ERCO",  # ERCOT
 ]
 
