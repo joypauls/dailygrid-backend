@@ -2,7 +2,7 @@ name: Update Data
 
 on:
   schedule:
-    - cron: "0 16 * * *"
+    - cron: "0 20 * * *"
   workflow_dispatch: # allows manual runs
 
 jobs:
