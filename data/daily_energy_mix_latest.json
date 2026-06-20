@@ -1,70 +1,65 @@
 {
   "US48": {
     "latest": {
-      "date": "2026-06-18",
-      "updated": "2026-06-19 15:37",
+      "date": "2026-06-19",
+      "updated": "2026-06-20 15:34",
       "renewables": {
-        "megawatthours": 3526350,
-        "gigawatthours": 3526,
-        "percent": 28.58,
+        "megawatthours": 2649391,
+        "gigawatthours": 2649,
+        "percent": 24.46,
         "source": "Renewables"
       },
       "fossil_fuels": {
-        "megawatthours": 6518823,
-        "gigawatthours": 6519,
-        "percent": 52.84,
+        "megawatthours": 5945419,
+        "gigawatthours": 5945,
+        "percent": 54.9,
         "source": "Fossil Fuels"
       },
       "solar": {
-        "megawatthours": 1133318,
-        "gigawatthours": 1133,
-        "percent": 9.19,
+        "megawatthours": 1063290,
+        "gigawatthours": 1063,
+        "percent": 9.82,
         "source": "Solar"
       },
       "wind": {
-        "megawatthours": 1657555,
-        "gigawatthours": 1658,
-        "percent": 13.44,
+        "megawatthours": 881393,
+        "gigawatthours": 881,
+        "percent": 8.14,
         "source": "Wind"
       },
       "hydro": {
-        "megawatthours": 705087,
-        "gigawatthours": 705,
-        "percent": 5.72,
+        "megawatthours": 674523,
+        "gigawatthours": 675,
+        "percent": 6.23,
         "source": "Hydro"
       },
       "nuclear": {
-        "megawatthours": 2115108,
-        "gigawatthours": 2115,
-        "percent": 17.14,
+        "megawatthours": 2072814,
+        "gigawatthours": 2073,
+        "percent": 19.14,
         "source": "Nuclear"
       },
       "coal": {
-        "megawatthours": 1751100,
-        "gigawatthours": 1751,
-        "percent": 14.19,
+        "megawatthours": 1505112,
+        "gigawatthours": 1505,
+        "percent": 13.9,
         "source": "Coal"
       },
       "natural_gas": {
-        "megawatthours": 4746094,
-        "gigawatthours": 4746,
-        "percent": 38.47,
+        "megawatthours": 4430016,
+        "gigawatthours": 4430,
+        "percent": 40.91,
         "source": "Natural Gas"
       },
       "other": {
-        "megawatthours": 228545,
-        "gigawatthours": 229,
-        "percent": 1.85,
+        "megawatthours": 202251,
+        "gigawatthours": 202,
+        "percent": 1.87,
         "source": "Other"
       }
     },
     "history": {
       "total": [
-        {
-          "date": "2026-06-06",
-          "megawatthours": 12057974,
-          "gigawatthours": 12058
-        },
         {
           "date": "2026-06-07",
           "megawatthours": 12110221,
@@ -77,7 +72,7 @@
         },
         {
           "date": "2026-06-09",
-          "megawatthours": 13080110,
+          "megawatthours": 13080409,
           "gigawatthours": 13080
         },
         {
@@ -92,13 +87,13 @@
         },
         {
           "date": "2026-06-12",
-          "megawatthours": 13681826,
+          "megawatthours": 13681831,
           "gigawatthours": 13682
         },
         {
           "date": "2026-06-13",
-          "megawatthours": 13005507,
-          "gigawatthours": 13006
+          "megawatthours": 13001913,
+          "gigawatthours": 13002
         },
         {
           "date": "2026-06-14",
@@ -112,60 +107,65 @@
         },
         {
           "date": "2026-06-16",
-          "megawatthours": 12087151,
+          "megawatthours": 12087184,
           "gigawatthours": 12087
         },
         {
           "date": "2026-06-17",
-          "megawatthours": 12080929,
-          "gigawatthours": 12081
+          "megawatthours": 12084992,
+          "gigawatthours": 12085
         },
         {
           "date": "2026-06-18",
-          "megawatthours": 11186358,
-          "gigawatthours": 11186
+          "megawatthours": 11330798,
+          "gigawatthours": 11331
+        },
+        {
+          "date": "2026-06-19",
+          "megawatthours": 10539628,
+          "gigawatthours": 10540
         }
       ]
     }
   },
   "CISO": {
     "latest": {
-      "date": "2026-06-18",
-      "updated": "2026-06-19 15:37",
+      "date": "2026-06-19",
+      "updated": "2026-06-20 15:34",
       "renewables": {
-        "megawatthours": 413512,
-        "gigawatthours": 414,
-        "percent": 81.57,
+        "megawatthours": 402806,
+        "gigawatthours": 403,
+        "percent": 83.23,
         "source": "Renewables"
       },
       "fossil_fuels": {
-        "megawatthours": 42070,
-        "gigawatthours": 42,
-        "percent": 8.3,
+        "megawatthours": 43077,
+        "gigawatthours": 43,
+        "percent": 8.9,
         "source": "Fossil Fuels"
       },
       "solar": {
-        "megawatthours": 221427,
-        "gigawatthours": 221,
-        "percent": 43.68,
+        "megawatthours": 217852,
+        "gigawatthours": 218,
+        "percent": 45.01,
         "source": "Solar"
       },
       "wind": {
-        "megawatthours": 105782,
-        "gigawatthours": 106,
-        "percent": 20.87,
+        "megawatthours": 102975,
+        "gigawatthours": 103,
+        "percent": 21.28,
         "source": "Wind"
       },
       "hydro": {
-        "megawatthours": 67446,
-        "gigawatthours": 67,
-        "percent": 13.3,
+        "megawatthours": 63486,
+        "gigawatthours": 63,
+        "percent": 13.12,
         "source": "Hydro"
       },
       "nuclear": {
-        "megawatthours": 54591,
+        "megawatthours": 54586,
         "gigawatthours": 55,
-        "percent": 10.77,
+        "percent": 11.28,
         "source": "Nuclear"
       },
       "coal": {
@@ -175,25 +175,20 @@
         "source": "Coal"
       },
       "natural_gas": {
-        "megawatthours": 40966,
-        "gigawatthours": 41,
-        "percent": 8.08,
+        "megawatthours": 41973,
+        "gigawatthours": 42,
+        "percent": 8.67,
         "source": "Natural Gas"
       },
       "other": {
-        "megawatthours": 19961,
+        "megawatthours": 19597,
         "gigawatthours": 20,
-        "percent": 3.94,
+        "percent": 4.05,
         "source": "Other"
       }
     },
     "history": {
       "total": [
-        {
-          "date": "2026-06-05",
-          "megawatthours": 470502,
-          "gigawatthours": 471
-        },
         {
           "date": "2026-06-06",
           "megawatthours": 427249,
@@ -258,76 +253,76 @@
           "date": "2026-06-18",
           "megawatthours": 505148,
           "gigawatthours": 505
+        },
+        {
+          "date": "2026-06-19",
+          "megawatthours": 478072,
+          "gigawatthours": 478
         }
       ]
     }
   },
   "MISO": {
     "latest": {
-      "date": "2026-06-18",
-      "updated": "2026-06-19 15:37",
+      "date": "2026-06-19",
+      "updated": "2026-06-20 15:34",
       "renewables": {
-        "megawatthours": 427333,
-        "gigawatthours": 427,
-        "percent": 23.25,
+        "megawatthours": 417484,
+        "gigawatthours": 417,
+        "percent": 23.01,
         "source": "Renewables"
       },
       "fossil_fuels": {
-        "megawatthours": 1125672,
-        "gigawatthours": 1126,
-        "percent": 61.26,
+        "megawatthours": 1109523,
+        "gigawatthours": 1110,
+        "percent": 61.14,
         "source": "Fossil Fuels"
       },
       "solar": {
-        "megawatthours": 142768,
-        "gigawatthours": 143,
-        "percent": 7.77,
+        "megawatthours": 185786,
+        "gigawatthours": 186,
+        "percent": 10.24,
         "source": "Solar"
       },
       "wind": {
-        "megawatthours": 255220,
-        "gigawatthours": 255,
-        "percent": 13.89,
+        "megawatthours": 202465,
+        "gigawatthours": 202,
+        "percent": 11.16,
         "source": "Wind"
       },
       "hydro": {
-        "megawatthours": 29345,
+        "megawatthours": 29233,
         "gigawatthours": 29,
-        "percent": 1.6,
+        "percent": 1.61,
         "source": "Hydro"
       },
       "nuclear": {
-        "megawatthours": 276303,
-        "gigawatthours": 276,
-        "percent": 15.04,
+        "megawatthours": 275094,
+        "gigawatthours": 275,
+        "percent": 15.16,
         "source": "Nuclear"
       },
       "coal": {
-        "megawatthours": 446199,
-        "gigawatthours": 446,
-        "percent": 24.28,
+        "megawatthours": 409601,
+        "gigawatthours": 410,
+        "percent": 22.57,
         "source": "Coal"
       },
       "natural_gas": {
-        "megawatthours": 679473,
-        "gigawatthours": 679,
-        "percent": 36.97,
+        "megawatthours": 699922,
+        "gigawatthours": 700,
+        "percent": 38.57,
         "source": "Natural Gas"
       },
       "other": {
-        "megawatthours": 8368,
-        "gigawatthours": 8,
-        "percent": 0.46,
+        "megawatthours": 12617,
+        "gigawatthours": 13,
+        "percent": 0.7,
         "source": "Other"
       }
     },
     "history": {
       "total": [
-        {
-          "date": "2026-06-05",
-          "megawatthours": 1663857,
-          "gigawatthours": 1664
-        },
         {
           "date": "2026-06-06",
           "megawatthours": 1845850,
@@ -390,78 +385,78 @@
         },
         {
           "date": "2026-06-18",
-          "megawatthours": 1836196,
-          "gigawatthours": 1836
+          "megawatthours": 1829754,
+          "gigawatthours": 1830
+        },
+        {
+          "date": "2026-06-19",
+          "megawatthours": 1813516,
+          "gigawatthours": 1814
         }
       ]
     }
   },
   "ERCO": {
     "latest": {
-      "date": "2026-06-18",
-      "updated": "2026-06-19 15:37",
+      "date": "2026-06-19",
+      "updated": "2026-06-20 15:34",
       "renewables": {
-        "megawatthours": 730069,
-        "gigawatthours": 730,
-        "percent": 43.61,
+        "megawatthours": 457260,
+        "gigawatthours": 457,
+        "percent": 29.26,
         "source": "Renewables"
       },
       "fossil_fuels": {
-        "megawatthours": 854508,
-        "gigawatthours": 855,
-        "percent": 51.04,
+        "megawatthours": 1016624,
+        "gigawatthours": 1017,
+        "percent": 65.05,
         "source": "Fossil Fuels"
       },
       "solar": {
-        "megawatthours": 304071,
-        "gigawatthours": 304,
-        "percent": 18.16,
+        "megawatthours": 184064,
+        "gigawatthours": 184,
+        "percent": 11.78,
         "source": "Solar"
       },
       "wind": {
-        "megawatthours": 425504,
-        "gigawatthours": 426,
-        "percent": 25.41,
+        "megawatthours": 271586,
+        "gigawatthours": 272,
+        "percent": 17.38,
         "source": "Wind"
       },
       "hydro": {
-        "megawatthours": 494,
-        "gigawatthours": 0,
-        "percent": 0.03,
+        "megawatthours": 1610,
+        "gigawatthours": 2,
+        "percent": 0.1,
         "source": "Hydro"
       },
       "nuclear": {
-        "megawatthours": 88322,
-        "gigawatthours": 88,
-        "percent": 5.28,
+        "megawatthours": 87437,
+        "gigawatthours": 87,
+        "percent": 5.59,
         "source": "Nuclear"
       },
       "coal": {
-        "megawatthours": 181791,
-        "gigawatthours": 182,
-        "percent": 10.86,
+        "megawatthours": 208132,
+        "gigawatthours": 208,
+        "percent": 13.32,
         "source": "Coal"
       },
       "natural_gas": {
-        "megawatthours": 672717,
-        "gigawatthours": 673,
-        "percent": 40.18,
+        "megawatthours": 808492,
+        "gigawatthours": 808,
+        "percent": 51.73,
         "source": "Natural Gas"
       },
       "other": {
-        "megawatthours": 1354,
-        "gigawatthours": 1,
-        "percent": 0.08,
+        "megawatthours": 1608,
+        "gigawatthours": 2,
+        "percent": 0.1,
         "source": "Other"
       }
     },
     "history": {
       "total": [
-        {
-          "date": "2026-06-05",
-          "megawatthours": 1409483,
-          "gigawatthours": 1409
-        },
         {
           "date": "2026-06-06",
           "megawatthours": 1413657,
@@ -524,78 +519,78 @@
         },
         {
           "date": "2026-06-18",
-          "megawatthours": 1682009,
-          "gigawatthours": 1682
+          "megawatthours": 1683472,
+          "gigawatthours": 1683
+        },
+        {
+          "date": "2026-06-19",
+          "megawatthours": 1548937,
+          "gigawatthours": 1549
         }
       ]
     }
   },
   "PJM": {
     "latest": {
-      "date": "2026-06-18",
-      "updated": "2026-06-19 15:37",
+      "date": "2026-06-19",
+      "updated": "2026-06-20 15:34",
       "renewables": {
-        "megawatthours": 281815,
-        "gigawatthours": 282,
-        "percent": 10.79,
+        "megawatthours": 232614,
+        "gigawatthours": 233,
+        "percent": 9.5,
         "source": "Renewables"
       },
       "fossil_fuels": {
-        "megawatthours": 1468968,
-        "gigawatthours": 1469,
-        "percent": 56.24,
+        "megawatthours": 1350642,
+        "gigawatthours": 1351,
+        "percent": 55.16,
         "source": "Fossil Fuels"
       },
       "solar": {
-        "megawatthours": 97644,
-        "gigawatthours": 98,
-        "percent": 3.74,
+        "megawatthours": 123719,
+        "gigawatthours": 124,
+        "percent": 5.05,
         "source": "Solar"
       },
       "wind": {
-        "megawatthours": 135297,
-        "gigawatthours": 135,
-        "percent": 5.18,
+        "megawatthours": 70002,
+        "gigawatthours": 70,
+        "percent": 2.86,
         "source": "Wind"
       },
       "hydro": {
-        "megawatthours": 48874,
-        "gigawatthours": 49,
-        "percent": 1.87,
+        "megawatthours": 38893,
+        "gigawatthours": 39,
+        "percent": 1.59,
         "source": "Hydro"
       },
       "nuclear": {
-        "megawatthours": 789862,
-        "gigawatthours": 790,
-        "percent": 30.24,
+        "megawatthours": 793738,
+        "gigawatthours": 794,
+        "percent": 32.42,
         "source": "Nuclear"
       },
       "coal": {
-        "megawatthours": 342025,
-        "gigawatthours": 342,
-        "percent": 13.09,
+        "megawatthours": 318450,
+        "gigawatthours": 318,
+        "percent": 13.01,
         "source": "Coal"
       },
       "natural_gas": {
-        "megawatthours": 1106760,
-        "gigawatthours": 1107,
-        "percent": 42.37,
+        "megawatthours": 1023661,
+        "gigawatthours": 1024,
+        "percent": 41.81,
         "source": "Natural Gas"
       },
       "other": {
-        "megawatthours": 91665,
-        "gigawatthours": 92,
-        "percent": 3.51,
+        "megawatthours": 79930,
+        "gigawatthours": 80,
+        "percent": 3.26,
         "source": "Other"
       }
     },
     "history": {
       "total": [
-        {
-          "date": "2026-06-06",
-          "megawatthours": 2609085,
-          "gigawatthours": 2609
-        },
         {
           "date": "2026-06-07",
           "megawatthours": 2609085,
@@ -653,26 +648,31 @@
         },
         {
           "date": "2026-06-18",
-          "megawatthours": 2617572,
-          "gigawatthours": 2618
+          "megawatthours": 2611481,
+          "gigawatthours": 2611
+        },
+        {
+          "date": "2026-06-19",
+          "megawatthours": 2444609,
+          "gigawatthours": 2445
         }
       ]
     }
   },
   "NYIS": {
     "latest": {
-      "date": "2026-06-18",
-      "updated": "2026-06-19 15:37",
+      "date": "2026-06-19",
+      "updated": "2026-06-20 15:34",
       "renewables": {
-        "megawatthours": 114650,
-        "gigawatthours": 115,
-        "percent": 28.44,
+        "megawatthours": 113946,
+        "gigawatthours": 114,
+        "percent": 30.09,
         "source": "Renewables"
       },
       "fossil_fuels": {
-        "megawatthours": 203000,
-        "gigawatthours": 203,
-        "percent": 50.36,
+        "megawatthours": 176902,
+        "gigawatthours": 177,
+        "percent": 46.71,
         "source": "Fossil Fuels"
       },
       "solar": {
@@ -682,21 +682,21 @@
         "source": "Solar"
       },
       "wind": {
-        "megawatthours": 42575,
-        "gigawatthours": 43,
-        "percent": 10.56,
+        "megawatthours": 44613,
+        "gigawatthours": 45,
+        "percent": 11.78,
         "source": "Wind"
       },
       "hydro": {
-        "megawatthours": 72075,
-        "gigawatthours": 72,
-        "percent": 17.88,
+        "megawatthours": 69333,
+        "gigawatthours": 69,
+        "percent": 18.31,
         "source": "Hydro"
       },
       "nuclear": {
-        "megawatthours": 78751,
-        "gigawatthours": 79,
-        "percent": 19.53,
+        "megawatthours": 79557,
+        "gigawatthours": 80,
+        "percent": 21.01,
         "source": "Nuclear"
       },
       "coal": {
@@ -706,15 +706,15 @@
         "source": "Coal"
       },
       "natural_gas": {
-        "megawatthours": 203000,
-        "gigawatthours": 203,
-        "percent": 50.36,
+        "megawatthours": 176902,
+        "gigawatthours": 177,
+        "percent": 46.71,
         "source": "Natural Gas"
       },
       "other": {
-        "megawatthours": 6735,
-        "gigawatthours": 7,
-        "percent": 1.67,
+        "megawatthours": 8313,
+        "gigawatthours": 8,
+        "percent": 2.2,
         "source": "Other"
       }
     },
@@ -722,8 +722,8 @@
       "total": [
         {
           "date": "2026-06-06",
-          "megawatthours": 381712,
-          "gigawatthours": 382
+          "megawatthours": 348304,
+          "gigawatthours": 348
         },
         {
           "date": "2026-06-07",
@@ -782,50 +782,55 @@
         },
         {
           "date": "2026-06-18",
-          "megawatthours": 406005,
+          "megawatthours": 406261,
           "gigawatthours": 406
+        },
+        {
+          "date": "2026-06-19",
+          "megawatthours": 378320,
+          "gigawatthours": 378
         }
       ]
     }
   },
   "ISNE": {
     "latest": {
-      "date": "2026-06-18",
-      "updated": "2026-06-19 15:37",
+      "date": "2026-06-19",
+      "updated": "2026-06-20 15:34",
       "renewables": {
-        "megawatthours": 47492,
-        "gigawatthours": 47,
-        "percent": 14.77,
+        "megawatthours": 64802,
+        "gigawatthours": 65,
+        "percent": 21.49,
         "source": "Renewables"
       },
       "fossil_fuels": {
-        "megawatthours": 173471,
-        "gigawatthours": 173,
-        "percent": 53.96,
+        "megawatthours": 134074,
+        "gigawatthours": 134,
+        "percent": 44.45,
         "source": "Fossil Fuels"
       },
       "solar": {
-        "megawatthours": 3098,
-        "gigawatthours": 3,
-        "percent": 0.96,
+        "megawatthours": 7710,
+        "gigawatthours": 8,
+        "percent": 2.56,
         "source": "Solar"
       },
       "wind": {
-        "megawatthours": 22404,
-        "gigawatthours": 22,
-        "percent": 6.97,
+        "megawatthours": 30418,
+        "gigawatthours": 30,
+        "percent": 10.09,
         "source": "Wind"
       },
       "hydro": {
-        "megawatthours": 21990,
-        "gigawatthours": 22,
-        "percent": 6.84,
+        "megawatthours": 26674,
+        "gigawatthours": 27,
+        "percent": 8.84,
         "source": "Hydro"
       },
       "nuclear": {
-        "megawatthours": 86355,
-        "gigawatthours": 86,
-        "percent": 26.86,
+        "megawatthours": 87521,
+        "gigawatthours": 88,
+        "percent": 29.02,
         "source": "Nuclear"
       },
       "coal": {
@@ -835,25 +840,20 @@
         "source": "Coal"
       },
       "natural_gas": {
-        "megawatthours": 173291,
-        "gigawatthours": 173,
-        "percent": 53.9,
+        "megawatthours": 133929,
+        "gigawatthours": 134,
+        "percent": 44.41,
         "source": "Natural Gas"
       },
       "other": {
-        "megawatthours": 14371,
-        "gigawatthours": 14,
-        "percent": 4.47,
+        "megawatthours": 15349,
+        "gigawatthours": 15,
+        "percent": 5.09,
         "source": "Other"
       }
     },
     "history": {
       "total": [
-        {
-          "date": "2026-06-05",
-          "megawatthours": 280880,
-          "gigawatthours": 281
-        },
         {
           "date": "2026-06-06",
           "megawatthours": 275670,
@@ -916,8 +916,13 @@
         },
         {
           "date": "2026-06-18",
-          "megawatthours": 321809,
-          "gigawatthours": 322
+          "megawatthours": 320724,
+          "gigawatthours": 321
+        },
+        {
+          "date": "2026-06-19",
+          "megawatthours": 302158,
+          "gigawatthours": 302
         }
       ]
     }
@@ -925,7 +930,7 @@
   "SWPP": {
     "latest": {
       "date": "2026-06-18",
-      "updated": "2026-06-19 15:37",
+      "updated": "2026-06-20 15:34",
       "renewables": {
         "megawatthours": 522576,
         "gigawatthours": 523,
@@ -983,11 +988,6 @@
     },
     "history": {
       "total": [
-        {
-          "date": "2026-06-06",
-          "megawatthours": 852443,
-          "gigawatthours": 852
-        },
         {
           "date": "2026-06-07",
           "megawatthours": 849655,
